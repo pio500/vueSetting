@@ -4,9 +4,13 @@
       <div style="width:50%;height:100%;float:left;cursor:pointer" @click="chatSwitch='chat'" :style="chatSwitch=='chat'? 'background:red':''">채팅 </div>
       <div style="width:50%;height:100%;float:left;cursor:pointer" @click="chatSwitch='poll'" :style="chatSwitch=='chat'? '':'background:red'"> 설문조사 </div>
     </div>
+    <chatMode v-if="chatSwitch=='chat'"></chatMode>
+    <pollMode v-else></pollMode>
   </div>
 </template>
 <script>
+  import chatMode from './chatMode'
+  import pollMode from './pollMode'
   export default {
     data(){
       return{
@@ -15,6 +19,10 @@
     },
     methods:{
 
+    },
+    components:{
+      chatMode:chatMode,
+      pollMode:pollMode
     }
   }
 </script>
