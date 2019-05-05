@@ -3,11 +3,11 @@
       <div style="position:absolute;top:0;left:0;width:100%;height:40px;">
         <div style="width:50%;height:100%;float:left;cursor:pointer" @click="loginSwitch='listner'" :style="loginSwitch=='listner'? 'background:red':''"> 개인 </div>
         <div style="width:50%;height:100%;float:left;cursor:pointer" @click="loginSwitch='speaker'" :style="loginSwitch=='listner'? '':'background:red'"> 그룹 </div>
-        <normalLogin v-if="loginSwitch=='listner'"></normalLogin>
-        <speakerLogin v-else></speakerLogin>
+        <normalLogin v-if="loginSwitch=='listner'" :firstInput.sync="firstInput" :secondInput.sync="secondInput" ></normalLogin>
+        <speakerLogin v-else :firstInput.sync="firstInput" :secondInput.sync="secondInput"></speakerLogin>
 
       </div>
-      <router-link :to="{name:'chatRoom'}" tag="button" style="position:absolute;bottom:0;width:100%;height:40px;left:0" >join</router-link>
+      <button @click="goMain" style="position:absolute;bottom:0;width:100%;height:40px;left:0" >join</button>
     </div>
 </template>
 <script>
@@ -16,11 +16,50 @@
   export default {
     data(){
       return{
-        loginSwitch:'listner'
+        loginSwitch:'listner',
+        firstInput:'',
+        secondInput:'',
+        memberInfo:[
+          {
+            id:'speaker1',
+            pwd:'1234',
+          },
+          {
+            id:'speaker2',
+            pwd:'1234',
+          }
+        ],
+        codeSet:[
+          'abc123',
+          'aaa123'
+        ],
       }
     },
     methods:{
+      goMain(){
+        if(this.loginSwitch=='listner'){
+          for(let i=0;i<this.codeSet.length;i++){
+            if(this.secondInput==this.codeSet[i]) {
+              this.$router.replace({name: 'chatRoom'})
+              return;
+            }
+          }
+          alert("맞는코드없음")
 
+       }else{
+          for(let i=0;i<this.memberInfo.length;i++){
+            console.log(this.firstInput + '    ' + this.memberInfo[i].id)
+            console.log(this.secondInput + '    ' + this.memberInfo[i].pwd)
+            if(this.firstInput==this.memberInfo[i].id && this.secondInput==this.memberInfo[i].pwd) {
+
+              this.$router.replace({name: 'roomList'})
+              return;
+            }
+          }
+          alert("회원정보 불일치")
+
+        }
+      }
     },
     components:{
       normalLogin:normalLogin,

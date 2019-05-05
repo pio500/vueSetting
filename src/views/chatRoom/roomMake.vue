@@ -1,7 +1,6 @@
 <template>
   <div class="about">
-    <h1>lgon=sdf</h1>
-    <router-link :to="{name:'main'}" tag="button">11111</router-link>
+    makemakemkankanaknakahn
   </div>
 </template>
 <script>
