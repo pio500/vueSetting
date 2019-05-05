@@ -4,7 +4,7 @@ import login from './views/login/login.vue'
 import main from './views/main/main.vue'
 import roomList from './views/chatRoom/roomList'
 import chatRoom from './views/chatRoom/chatRoom'
-
+import roomMake from './views/chatRoom/roomMake'
 Vue.use(Router)
 
 export default new Router({
@@ -25,6 +25,11 @@ export default new Router({
       path: '/roomList',
       name: 'roomList',
       component: roomList
+    },
+    {
+      path: '/roomMake',
+      name: 'roomMake',
+      component: roomMake
     },
     {
       path: '/chatRoom',

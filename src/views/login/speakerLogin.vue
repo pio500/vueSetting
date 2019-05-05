@@ -1,8 +1,7 @@
 <template>
-  <div >
+  <div style="width:100%;margin:auto 0;">
     ID:<input v-model="firstInput" type="text"/><br>
     PWD:<input v-model='secondInput' type="password"/>
-    <!--<router-link :to="{name:'main'}" tag="button">11111</router-link>-->
   </div>
 </template>
 <script>

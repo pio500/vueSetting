@@ -48,8 +48,6 @@
 
        }else{
           for(let i=0;i<this.memberInfo.length;i++){
-            console.log(this.firstInput + '    ' + this.memberInfo[i].id)
-            console.log(this.secondInput + '    ' + this.memberInfo[i].pwd)
             if(this.firstInput==this.memberInfo[i].id && this.secondInput==this.memberInfo[i].pwd) {
 
               this.$router.replace({name: 'roomList'})
