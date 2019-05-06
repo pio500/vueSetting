@@ -30,7 +30,7 @@
 <style scoped>
   div {
     position: fixed;
-    top: 50%;
+    top: 300px;
     left: 50%;
     transform: translate(-50%, -50%);
   }
