@@ -1,10 +1,11 @@
 <template>
   <div style="width:100%;height:650px;margin-top:120px;position:relative">
-    <div  style="width:100%;height:600px;overflow:scroll;" id="chatBox">
+    <div  style="width:100%;height:530px;overflow:scroll;overflow-x: hidden" id="chatBox">
       <container v-for="item in questions" style="color: gray;width:80%;float:left;background-color: #f1f1f1;border: 2px solid #dedede;  border-radius: 5px;padding: 10px;margin: 10px 0;">{{item}}</container>
     </div>
-    <input type="text" @keyup.enter="submit" style="position:absolute;bottom:0;left:0;width:80%;height:40px;" v-model="question">
-    <button @click="submit" style="width:20%;height:40px;float: right;color: white;background-color: lightsteelblue">submit</button>
+      <input type="text" @keyup.enter="submit" style="position:absolute;left:0;width:80%; height:34px;" v-model="question">
+      <button @click="submit" style="width:20%;height:40px;float: right;color: white;background-color: lightsteelblue">submit</button>
+
   </div>
 </template>
 <script>

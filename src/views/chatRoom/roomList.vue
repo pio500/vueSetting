@@ -1,15 +1,15 @@
 <template>
   <div style="width:400px;height:690px;border:1px solid black;margin:0 auto;">
-      <div style="width:400px;font-weight:bold;color:lightsalmon;margin-top:0;position:absolute;height:40px;background-color: dimgrey; line-height: 40px">
+      <div style="width:400px;font-weight:bold;color:lightsalmon;margin-top:0;position:absolute;height:60px;background-color: dimgrey; line-height: 40px">
           Qplz
       </div>
       <div  @click="goChatRoom" style="height: 60px;"></div>
-      <div @click="addRoom" style="padding-top:10px;padding-bottom:10px;width:80%;margin:10px auto;border:1px solid darkgrey;font-weight:bold;background-color: lightgrey;color:gray;">+</div>
+      <div @click="addRoom" style="padding-top:15px;padding-bottom:15px;width:80%;margin:10px auto;border:1px solid darkgrey;font-weight:bold;background-color: lightgrey;color:gray;font-size: 30px">+</div>
 
-    <div v-for="item in roomList" @click="goChatRoom" style="width:80%;margin:10px auto;border:1px solid darkgrey; padding-bottom:10px;padding-top: 10px">
-        제목 : {{item.title}}<br>
-        참여자 수 : {{item.max}}<br>
-        회사명 : {{item.company}}
+    <div v-for="item in roomList" @click="goChatRoom" style="line-height:1.6em;width:80%;height:80px; margin:10px auto;border: outset lightgrey; padding-top: 10px">
+        <b style="float:left; margin-left: 10px;color: gray">제목</b> <b style="float: right;margin-right: 10px">{{item.title}}</b><br>
+        <b style="float:left; margin-left: 10px;color: gray">참여자 수</b> <b style="float: right;margin-right: 10px">{{item.max}}</b><br>
+        <b style="float:left; margin-left: 10px;color: gray">회사명</b> <b style="float: right;margin-right: 10px">{{item.company}}</b>
     </div>
   </div>
 </template>
@@ -19,29 +19,29 @@
       return{
         roomList:[
           {
-            title:'titlet22222ile',
-            max:20,
+            title:'카카오프렌즈',
+            max:200,
             company:'카카오'
           },
           {
-            title:'titl33333etile',
-            max:50,
+            title:'네이버 메일',
+            max:450,
             company:'네이버'
           },
           {
-            title:'title4444tile',
-            max:80,
+            title:'다음 카카오',
+            max:280,
             company:'다음'
           },
           {
-            title:'tit5555letile',
-            max:52220,
+            title:'삼성 채용',
+            max:220,
             company:'삼성'
           },
           {
-            title:'titlet6666ile',
-            max:530,
-            company:'ㅉㅈ'
+            title:'채용설명회',
+            max:350,
+            company:'신한은행'
           },
         ]
       }
