@@ -1,8 +1,12 @@
 <template>
   <div style="width:400px;height:690px;border:1px solid black;margin:0 auto;">
-    <div @click="addRoom" style="width:80%;margin:10px auto;border:1px solid black;background:blue;color:white;">+</div>
+      <div style="width:400px;font-weight:bold;color:lightsalmon;margin-top:0;position:absolute;height:40px;background-color: dimgrey; line-height: 40px">
+          Qplz
+      </div>
+      <div  @click="goChatRoom" style="height: 60px;"></div>
+      <div @click="addRoom" style="padding-top:10px;padding-bottom:10px;width:80%;margin:10px auto;border:1px solid darkgrey;font-weight:bold;background-color: lightgrey;color:gray;">+</div>
 
-    <div v-for="item in roomList" @click="goChatRoom" style="width:80%;margin:10px auto;border:1px solid black">
+    <div v-for="item in roomList" @click="goChatRoom" style="width:80%;margin:10px auto;border:1px solid darkgrey; padding-bottom:10px;padding-top: 10px">
         제목 : {{item.title}}<br>
         참여자 수 : {{item.max}}<br>
         회사명 : {{item.company}}

@@ -1,9 +1,10 @@
 <template>
-  <div style="width:100%;height:650px;margin-top:40px;position:relative">
-    <div  style="width:100%;height:600px;overflow:scroll; " id="chatBox">
-      <div v-for="item in questions" style="width:80%;float:right;background:yellow;margin-top:10px;">{{item}}</div>
+  <div style="width:100%;height:650px;margin-top:120px;position:relative">
+    <div  style="width:100%;height:600px;overflow:scroll;" id="chatBox">
+      <container v-for="item in questions" style="color: gray;width:80%;float:left;background-color: #f1f1f1;border: 2px solid #dedede;  border-radius: 5px;padding: 10px;margin: 10px 0;">{{item}}</container>
     </div>
-    <input type="text" style="position:absolute;bottom:0;left:0;width:100%;height:40px;" @keyup.enter="submit" v-model="question">
+    <input type="text" style="position:absolute;bottom:0;left:0;width:80%;height:40px;" v-model="question">
+    <button @click="submit" style="width:20%;height:40px;float: right;color: white;background-color: lightsteelblue">submit</button>
   </div>
 </template>
 <script>
@@ -12,15 +13,6 @@
     data(){
       return{
         question:'',
-        answers:[
-                '1번답변',
-          '2번답변',
-          '3번답변',
-          '4번답변',
-          '5번답변',
-          '6번답변',
-          '7번답변'
-        ],
         questions:[]
       }
     },

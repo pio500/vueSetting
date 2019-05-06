@@ -1,13 +1,16 @@
 <template>
-    <div style="width:300px;height:400px;border:1px solid black; margin:0 auto; position:relative">
-      <div style="position:absolute;top:0;left:0;width:100%;height:40px;">
-        <div style="width:50%;height:100%;float:left;cursor:pointer" @click="loginSwitch='listner'" :style="loginSwitch=='listner'? 'background:red':''"> 개인 </div>
-        <div style="width:50%;height:100%;float:left;cursor:pointer" @click="loginSwitch='speaker'" :style="loginSwitch=='listner'? '':'background:red'"> 그룹 </div>
-        <normalLogin v-if="loginSwitch=='listner'" :firstInput.sync="firstInput" :secondInput.sync="secondInput" ></normalLogin>
+    <div style="width:300px;height:400px;border:1px solid ; margin:0 auto; position:relative">
+        <div style="font-weight:bold;color:lightsalmon;position:absolute;top:0;left:0;width:100%;height:40px;background-color: dimgrey; line-height: 40px">
+            Qplz
+        </div>
+        <div style="position:absolute;margin-top:40px;width:100%;height:40px">
+        <div style="width:50%;height:100%;float:left;cursor:pointer; line-height: 40px" @click="loginSwitch='listener'" :style="loginSwitch=='listener'? 'color:coral':'background:lightgrey; color:darkgrey'"> 개인 </div>
+        <div style="width:50%;height:100%;float:left;cursor:pointer; line-height: 40px" @click="loginSwitch='speaker'" :style="loginSwitch=='listener'? 'background:lightgrey; color:darkgrey':'color:coral'"> 그룹 </div>
+        <normalLogin  v-if="loginSwitch=='listener'" :firstInput.sync="firstInput" :secondInput.sync="secondInput" ></normalLogin>
         <speakerLogin v-else :firstInput.sync="firstInput" :secondInput.sync="secondInput"></speakerLogin>
 
       </div>
-      <button @click="goMain" style="position:absolute;bottom:0;width:100%;height:40px;left:0" >join</button>
+      <button @click="goMain" style="position:absolute;bottom:0;width:100%;height:40px;left:0;background-color: lightsteelblue;color: white; font-weight: bold" >JOIN</button>
     </div>
 </template>
 <script>
@@ -16,7 +19,7 @@
   export default {
     data(){
       return{
-        loginSwitch:'listner',
+        loginSwitch:'listener',
         firstInput:'',
         secondInput:'',
         memberInfo:[
@@ -37,7 +40,7 @@
     },
     methods:{
       goMain(){
-        if(this.loginSwitch=='listner'){
+        if(this.loginSwitch=='listener'){
           for(let i=0;i<this.codeSet.length;i++){
             if(this.secondInput==this.codeSet[i]) {
               this.$router.replace({name: 'chatRoom'})
