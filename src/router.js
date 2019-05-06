@@ -5,6 +5,7 @@ import main from './views/main/main.vue'
 import roomList from './views/chatRoom/roomList'
 import chatRoom from './views/chatRoom/chatRoom'
 import roomMake from './views/chatRoom/roomMake'
+import surveyAdd from './views/survey/surveyAdd'
 Vue.use(Router)
 
 export default new Router({
@@ -35,6 +36,11 @@ export default new Router({
       path: '/chatRoom',
       name: 'chatRoom',
       component: chatRoom
+    },
+    {
+      path: '/surveyAdd',
+      name: 'surveyAdd',
+      component: surveyAdd
     }
   ]
 })
